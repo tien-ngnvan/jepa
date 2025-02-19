@@ -15,6 +15,13 @@ def get_requirements():
         reqs = reqsf.readlines()
     return reqs
 
+def get_readme_description(path: str = os.path.join(os.getcwd(), 'README.md')):
+    """
+    Get long description from readme file.
+    """
+    path = pathlib.Path(path).expanduser().resolve()
+    with open(path, encoding='utf-8') as file:
+        description = file.read()
 
 if __name__ == "__main__":
     setup(
